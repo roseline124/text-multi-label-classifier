@@ -1,3 +1,7 @@
 {
-  "python.pythonPath": "supple/bin/python"
+  "python.pythonPath": "supple/bin/python",
+  "code-runner.runInTerminal": true,
+  "code-runner.executorMap": {
+    "python": "python3"
+  }
 }
