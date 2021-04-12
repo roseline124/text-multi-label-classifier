@@ -176,7 +176,6 @@ Kotlin
 Framework
 네트워크
 알고리즘
-디자인패턴
 AWS
 커뮤니케이션
 유니티

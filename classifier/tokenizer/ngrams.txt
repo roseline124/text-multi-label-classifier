@@ -2,3 +2,4 @@ visual studio code  Noun
 비주얼 스튜디오 코드  Noun
 코드 리뷰 Noun
 React Native  Noun
+디자인 패턴 Noun
