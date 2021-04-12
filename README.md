@@ -13,3 +13,11 @@
 ### module import
 
 - https://stackoverflow.com/questions/4383571/importing-files-from-different-folder
+
+### todo
+
+- [ ] terminal styling: surpress warnings, colorful logs
+- [ ] docker-compose
+- [ ] use graphql
+- [ ] deploy tagging server
+- [ ] refactor
