@@ -1,5 +1,5 @@
 {
-  "python.pythonPath": "supple/bin/python",
+  "python.pythonPath": "myenv/bin/python",
   "code-runner.runInTerminal": true,
   "code-runner.executorMap": {
     "python": "python3"
