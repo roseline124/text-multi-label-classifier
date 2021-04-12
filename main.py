@@ -1,10 +1,9 @@
-from typing import Optional
-
 from fastapi import FastAPI
 from classifier import text_multi_label_classifier
 import pandas as pd
 
 app = FastAPI()
+
 clf, feature_transformer, multilabel = text_multi_label_classifier.classifier()
 
 
@@ -14,7 +13,7 @@ async def read_root():
 
 
 @app.get("/tags")
-async def read_post_tags(title: Optional[str] = None, tags: Optional[str] = None):
+async def read_post_tags(title: str = None, tags: str = None):
     df_test = pd.DataFrame(
         {'title': [title], 'external_tags': [tags]})
     Xt = feature_transformer.transform(df_test)

@@ -1,14 +1,19 @@
 # supple tagging
 
-### vscode lint 에러
+### vscode lint error
 
 - https://stackoverflow.com/a/51010506
-- python interpreter 선택: virtual env에 있는 lint 사용
+- select 'python interpreter': use linter in virtual env
 
-### 실행
+### manage package
 
-- 앱 실행: `uvicorn main:app --reload`
-- 파일 단일 실행: `python3 ./classfier/preprocessor.py`
+- to freeze packages (l option is 'local': freeze only packages installed in virutal env): `pip freeze -l > requirements.txt`
+- to install packages: `pip install -r requirements.txt` (or use pip3)
+
+### run
+
+- run app: `uvicorn main:app --reload`
+- run file: `python3 ./classfier/<file_name>.py`
 
 ### module import
 
@@ -16,8 +21,8 @@
 
 ### todo
 
-- [ ] terminal styling: surpress warnings, colorful logs
+- [x] terminal styling: surpress warnings, colorful logs
+- [ ] deploy tagging server
 - [ ] docker-compose
 - [ ] use graphql
-- [ ] deploy tagging server
 - [ ] refactor
