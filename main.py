@@ -13,10 +13,11 @@ async def read_root():
     return {"msg": "World"}
 
 
-@app.get("/tags/{post_id}")
-async def read_post_tags(post_id: int, title: Optional[str] = None, tags: Optional[str] = None):
+@app.get("/tags")
+async def read_post_tags(title: Optional[str] = None, tags: Optional[str] = None):
     df_test = pd.DataFrame(
         {'title': [title], 'external_tags': [tags]})
     Xt = feature_transformer.transform(df_test)
     result = multilabel.inverse_transform(clf.predict(Xt))
-    return {"tags": str(result)}
+    tags = [*result[0]]  # unpack [('tag1', 'tag2')] -> ['tag1', 'tag2']
+    return {"tags": tags}
