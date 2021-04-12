@@ -15,7 +15,7 @@ def _text_pipeline(column_name, tokenizer):
     return Pipeline([
         ('type_casting', _to_unicode(column_name)),
         ('tfidf', TfidfVectorizer(tokenizer=tokenizer,
-         max_features=10000, stop_words=stopwords))  # ngram_range=(1, 3) 일단 제외
+         max_features=10000, stop_words=stopwords, token_pattern=None))
     ])
 
 

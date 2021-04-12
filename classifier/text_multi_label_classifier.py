@@ -17,18 +17,19 @@ def classifier():
     """
     return classifier, feature_transformer
     """
+
     # fetch data
-    print('⬇️ get target data...')
+    print('🔥 get target data...')
     df = pd.read_csv(path.abspath('./data/posts_target.csv'), index_col=0)
 
     # preprocess: one-hot encoding + get target data
-    print('🔥 preprocess: one-hot encoding...')
+    print('🧹 preprocess: one-hot encoding...')
     df['tags'] = df['targets'].apply(lambda x: re.sub('{|}', '', x).split(','))
     multilabel = preprocessing.MultiLabelBinarizer()
     y = multilabel.fit_transform(df['tags'])
 
     # transform with feature pipelines
-    print('🔧 get feature transformer and transform data...')
+    print('⛏ get feature transformer and transform data...')
     transformer = feature_transformer.text_transformer(
         df, [('title', 'title'), ('external_tags', 'tags')], tokenizer)
 
@@ -36,7 +37,8 @@ def classifier():
     X = transformer.transform(df)
 
     # classify
-    print('🔧 build classification model...')
+    print('🏭 build classification model...')
+
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=0)
 
@@ -45,4 +47,5 @@ def classifier():
     clf = OneVsRestClassifier(sgd)
     clf.fit(X_train, y_train)
 
+    print('🏁 finish building classifier!')
     return clf, transformer, multilabel

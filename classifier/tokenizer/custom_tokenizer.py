@@ -1,3 +1,5 @@
+import warnings
+
 from ckonlpy.tag import Postprocessor, Twitter
 from ckonlpy.utils import load_ngram, load_wordset, load_replace_wordpair
 from os import path
@@ -9,7 +11,10 @@ replace = load_replace_wordpair(path.abspath(
     './classifier/tokenizer/replacewords.txt'))
 ngrams = load_ngram(path.abspath('./classifier/tokenizer/ngrams.txt'))
 
-twitter = Twitter()
+with warnings.catch_warnings():
+    warnings.simplefilter("ignore")
+    twitter = Twitter()  # Twitter -> Okt
+
 twitter.add_dictionary(list(dictionary), 'Noun')
 
 postprocessor = Postprocessor(
