@@ -7,4 +7,9 @@
 
 ### 실행
 
-- `uvicorn main:app --reload`
+- 앱 실행: `uvicorn main:app --reload`
+- 파일 단일 실행: `python3 ./classfier/preprocessor.py`
+
+### module import
+
+- https://stackoverflow.com/questions/4383571/importing-files-from-different-folder
