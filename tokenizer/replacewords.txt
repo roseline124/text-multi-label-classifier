@@ -1,0 +1,13 @@
+js  javascript
+ecmascript  javascript
+프런트엔드  프론트엔드
+frontend  프론트엔드
+검색엔진최적화  SEO
+cra react
+ts  typescript
+COVID19 코로나
+k8s Kubernetes
+OS  운영체제
+algorism  알고리즘
+microservices 마이크로서비스
+microservice  마이크로서비스
