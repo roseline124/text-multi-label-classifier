@@ -22,7 +22,21 @@
 ### todo
 
 - [x] terminal styling: surpress warnings, colorful logs
+- [x] build Dockerfile
 - [ ] deploy tagging server
-- [ ] docker-compose
 - [ ] use graphql
 - [ ] refactor
+
+### docker
+
+[docker with java and python](https://stackoverflow.com/questions/51121875/how-to-run-docker-with-python-and-java)
+
+- docker image build: `docker build -t <your-image-name> .`
+- start container: `docker run -d --name <your-container-name> -p 80:80 <your-image-name>`
+- docker debug: `docker logs <container-id>`
+- docker execute in shell: `docker exec it <container-id> sh`
+
+you can pull `konlpy-fastapi` docker image from docker hub.
+
+- pull docker image: `docker pull roseline124/konlpy-fastapi`
+- start container: `docker run -d --name <your-container-name> -p 80:80 roseline124/konlpy-fastapi`
