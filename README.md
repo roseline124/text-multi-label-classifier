@@ -22,8 +22,8 @@
 ### todo
 
 - [x] terminal styling: surpress warnings, colorful logs
-- [x] build Dockerfile
-- [ ] deploy tagging server
+- [x] build Dockerfile (for local)
+- [x] deploy tagging server
 - [ ] use graphql
 - [ ] refactor
 
@@ -40,3 +40,33 @@ you can pull `konlpy-fastapi` docker image from docker hub.
 
 - pull docker image: `docker pull roseline124/konlpy-fastapi`
 - start container: `docker run -d --name <your-container-name> -p 80:80 roseline124/konlpy-fastapi`
+
+### deploy
+
+- create AWS lightsail instance - ubuntu 20.4(focal)
+- install dependencies and set configuration in lightsail
+
+```sh
+sudo apt-get update
+sudo apt-get install -y --no-install-recommends tzdata g++ git curl
+
+# install java
+sudo apt-get install -y openjdk-8-jdk
+
+# set JAVA_HOME path
+JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk
+source /etc/environment && export JAVA_HOME
+
+# install python
+sudo apt-get install -y python3-pip python3-dev
+
+# create symlink python3 -> python, pip3 -> pip
+cd /usr/local/bin
+sudo ls -s /usr/bin/python3 python
+sudo ln -s /usr/bin/pip3 pip
+pip3 install --upgrade pip
+
+# clean
+sudo apt-get clean
+sudo rm -rf /var/lib/apt/lists/*
+```
