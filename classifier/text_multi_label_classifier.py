@@ -12,6 +12,12 @@ from sklearn.multiclass import OneVsRestClassifier
 from . import feature_transformer
 from .tokenizer.custom_tokenizer import tokenizer
 
+# for db query
+from queries import get_tag_targets_doc
+from settings import PostgresConfiguration
+
+pg = PostgresConfiguration()
+
 
 def classifier():
     """
@@ -20,11 +26,11 @@ def classifier():
 
     # fetch data
     print('🔥 get target data...')
-    df = pd.read_csv(path.abspath('./data/posts_target.csv'), index_col=0)
+    df = pd.read_sql(get_tag_targets_doc, pg.postgres_db_path)
 
     # preprocess: one-hot encoding + get target data
     print('🧹 preprocess: one-hot encoding...')
-    df['tags'] = df['targets'].apply(lambda x: re.sub('{|}', '', x).split(','))
+    df = df.rename(index=str, columns={"targets": "tags"})
     multilabel = preprocessing.MultiLabelBinarizer()
     y = multilabel.fit_transform(df['tags'])
 

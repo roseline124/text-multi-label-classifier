@@ -24,7 +24,7 @@
 - [x] terminal styling: surpress warnings, colorful logs
 - [x] build Dockerfile (for local)
 - [x] deploy tagging server
-- [ ] fetch target data
+- [x] fetch live target data from db
 - [ ] use graphql
 - [ ] refactor
 
@@ -41,3 +41,24 @@ you can pull `konlpy-fastapi` docker image from docker hub.
 
 - pull docker image: `docker pull roseline124/konlpy-fastapi`
 - start container: `docker run -d --name <your-container-name> -p 80:80 roseline124/konlpy-fastapi`
+
+### get live data from db (db engine: postgresql)
+
+- create dataframe after query: `pd.read_sql(<sql_statement>, <connection_address>)`
+
+\*connection_address ex) postgresql://<user>:<password>@<host>/<db-name>
+
+### requirements
+
+- .env
+- queries.py
+
+```python
+from sqlalchemy import text
+
+get_target_data_doc = text(
+  """
+  select t.id, t.name from "Table" t
+  """
+)
+```
