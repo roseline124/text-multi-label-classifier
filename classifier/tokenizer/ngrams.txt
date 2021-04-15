@@ -1,5 +1,20 @@
-visual studio code  Noun
-비주얼 스튜디오 코드  Noun
-코드 리뷰 Noun
-React Native  Noun
-디자인 패턴 Noun
+visual studio code	Noun
+비주얼 스튜디오 코드	Noun
+코드 리뷰	Noun
+react native	Noun
+리액트 네이티브	Noun
+디자인 패턴	Noun
+redux saga	Noun
+machine learning	Noun
+멀티 쓰레드	Noun
+싱글 쓰레드	Noun
+멀티 스레드	Noun
+싱글 스레드	Noun
+나눔 고딕	Noun
+라즈베리 파이	Noun
+엘라스틱 서치	Noun
+로드 밸런싱	Noun
+인공 지능	Noun
+무한 스크롤	Noun
+우아한 형제들	Noun
+배달의 민족	Noun

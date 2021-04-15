@@ -42,8 +42,8 @@ def classifier():
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=0)
 
-    sgd = SGDClassifier(max_iter=1000, tol=1e-3,
-                        n_iter_no_change=10, n_jobs=-1)
+    sgd = SGDClassifier(loss="modified_huber", max_iter=1000,
+                        tol=1e-3, n_iter_no_change=10, n_jobs=-1, alpha=0.001)
     clf = OneVsRestClassifier(sgd)
     clf.fit(X_train, y_train)
 
