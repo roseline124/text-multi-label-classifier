@@ -1,6 +1,7 @@
-from fastapi import FastAPI
-from classifier import text_multi_label_classifier
 import pandas as pd
+from fastapi import FastAPI
+
+from classifier import text_multi_label_classifier
 
 app = FastAPI()
 

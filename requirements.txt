@@ -6,3 +6,6 @@ JPype1==1.2.1
 konlpy==0.5.2
 sklearn==0.0
 uvicorn==0.13.4
+SQLAlchemy==1.4.7
+python-dotenv==0.17.0
+psycopg2-binary==2.8.6
