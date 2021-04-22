@@ -229,3 +229,6 @@ visualizer
 linux
 도커
 docker
+python
+react
+django

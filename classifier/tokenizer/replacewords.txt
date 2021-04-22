@@ -13,3 +13,9 @@ algorism	알고리즘
 microservices 마이크로서비스
 microservice	마이크로서비스
 elasticStack	엘라스틱서치
+리액트	react
+장고	django
+쟝고	django
+파이톤	python
+파이썬	python
+파이선	python
