@@ -34,7 +34,7 @@ vim
 vi
 dagger
 vscode
-
+django
 webview
 웹뷰
 암호화폐
@@ -229,3 +229,5 @@ visualizer
 linux
 도커
 docker
+react
+python

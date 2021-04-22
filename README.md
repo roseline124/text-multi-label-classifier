@@ -25,8 +25,6 @@
 - [x] build Dockerfile (for local)
 - [x] deploy tagging server
 - [x] fetch live target data from db
-- [ ] use graphql
-- [ ] refactor
 
 ### docker
 
