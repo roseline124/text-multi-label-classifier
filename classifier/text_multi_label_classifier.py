@@ -37,7 +37,7 @@ def classifier():
     # transform with feature pipelines
     print('⛏ get feature transformer and transform data...')
     transformer = feature_transformer.text_transformer(
-        df, [('title', 'title'), ('external_tags', 'tags')], tokenizer)
+        df, [('title', 'title'), ('external_tags', 'tags')], tokenizer, transformer_weights={'tags': 7, 'title': 1})
 
     transformer.fit(df)
     X = transformer.transform(df)
@@ -49,7 +49,7 @@ def classifier():
         X, y, test_size=0.2, random_state=0)
 
     sgd = SGDClassifier(loss="modified_huber", max_iter=1000,
-                        tol=1e-3, n_iter_no_change=10, n_jobs=-1, alpha=0.001)
+                        tol=1e-3, n_iter_no_change=10, n_jobs=-1)
     clf = OneVsRestClassifier(sgd)
     clf.fit(X_train, y_train)
 

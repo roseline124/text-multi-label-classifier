@@ -18,3 +18,4 @@ machine learning	Noun
 무한 스크롤	Noun
 우아한 형제들	Noun
 배달의 민족	Noun
+toast meetup	Noun

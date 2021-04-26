@@ -15,11 +15,11 @@ def _text_pipeline(column_name, tokenizer):
     return Pipeline([
         ('type_casting', _to_unicode(column_name)),
         ('tfidf', TfidfVectorizer(tokenizer=tokenizer,
-         max_features=10000, stop_words=stopwords, token_pattern=None))
+         max_features=10000, stop_words=stopwords, token_pattern=None, use_idf=False))
     ])
 
 
-def text_transformer(df, field_pairs, tokenizer):
+def text_transformer(df, field_pairs, tokenizer, **feature_union_options):
     """
     vectorize text fields and union features. use like below example.
 
@@ -38,5 +38,6 @@ def text_transformer(df, field_pairs, tokenizer):
             original_field_name, tokenizer))
         feature_pipelines.append(pipeline)
 
-    transformer = FeatureUnion(feature_pipelines)
+    feature_union_options.get('')
+    transformer = FeatureUnion(feature_pipelines, **feature_union_options)
     return transformer

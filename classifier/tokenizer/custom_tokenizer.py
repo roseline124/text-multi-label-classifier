@@ -16,6 +16,7 @@ with warnings.catch_warnings():
     twitter = Twitter()  # Twitter -> Okt
 
 twitter.add_dictionary(list(dictionary), 'Noun')
+twitter.add_dictionary(list(alpha_dictionary), 'Alpha')
 
 postprocessor = Postprocessor(
     base_tagger=twitter,  # base tagger
