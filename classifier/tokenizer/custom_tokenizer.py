@@ -6,6 +6,8 @@ from os import path
 
 dictionary = load_wordset(path.abspath(
     './classifier/tokenizer/dictionary.txt'))
+alpha_dictionary = load_wordset(path.abspath(
+    './classifier/tokenizer/alpha_dictionary.txt'))
 stopwords = load_wordset(path.abspath('./classifier/tokenizer/stopwords.txt'))
 replace = load_replace_wordpair(path.abspath(
     './classifier/tokenizer/replacewords.txt'))
