@@ -15,6 +15,9 @@ Kafka	kafka
 프런트엔드	프론트엔드
 frontend	프론트엔드
 front-end	프론트엔드
+backend	백엔드
+Backend	백엔드
+back-end	백엔드
 검색엔진최적화	SEO
 cra	react
 ts	typescript

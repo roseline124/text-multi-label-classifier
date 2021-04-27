@@ -85,3 +85,5 @@ react
 django
 ES6
 useEffect
+frontend
+backend
