@@ -37,7 +37,7 @@ def classifier():
     # transform with feature pipelines
     print('⛏ get feature transformer and transform data...')
     transformer = feature_transformer.text_transformer(
-        df, [('title', 'title'), ('external_tags', 'tags')], tokenizer, transformer_weights={'tags': 7, 'title': 1})
+        df, [('title', 'title'), ('external_tags', 'tags')], tokenizer, transformer_weights={'tags': 3, 'title': 1})
 
     transformer.fit(df)
     X = transformer.transform(df)
